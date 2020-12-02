@@ -17,12 +17,3 @@ for f in files:
     flou = cv2.medianBlur(img, 15)
     latter = cv2.dilate(img, kernel, 20)
     cv2.imwrite(f"{dossier_exit}/{f}", latter)
-
-
-
-
-
-
-
-
-

@@ -75,7 +75,7 @@ try:
 except FileNotFoundError as e:
     print('dossier inexistant')
 except IndexError as e :
-    print(e)
+    print(eg)
 
 
 

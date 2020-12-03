@@ -1,6 +1,7 @@
 import cv2
 import os
 import numpy as np
+import logger
 
 
 def gray (dossierE , dossierS):
@@ -19,6 +20,7 @@ def gray (dossierE , dossierS):
             print('varible pas crée')
         except cv2.error as e:
             print('')
+        logger.log(f'gray = {f}')
 
 
 
@@ -39,6 +41,7 @@ def flou(dossierE, dossierS, flouter):
             print('varible pas crée')
         except cv2.error as e:
             print('')
+        logger.log(f'flou = {f}')
 
 
 def latter(dossierE, dossierS, di):
@@ -59,3 +62,4 @@ def latter(dossierE, dossierS, di):
             print('varible pas crée')
         except cv2.error as e:
             print('')
+        logger.log(f'latter = {f}')

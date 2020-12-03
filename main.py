@@ -1,6 +1,7 @@
 from fonction import gray, flou, latter
 import sys
 import os
+import logger
 
 try:
     args = sys.argv
@@ -51,7 +52,7 @@ try:
                 if arg == '--flou':
                     flou(dossier_exit, dossier_exit, floutage)
                 elif arg == '--latter':
-                    latter(dossier_exit,dossier_exit,di)
+                    latter(dossier_exit, dossier_exit, di)
 
         elif args[1] == '--flou':
             flou(dossier_entrance, dossier_exit, floutage)
@@ -77,5 +78,5 @@ except FileNotFoundError as e:
 except IndexError as e :
     print(e)
 
-
+logger.dump_log()
 

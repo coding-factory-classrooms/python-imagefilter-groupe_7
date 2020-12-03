@@ -2,16 +2,24 @@ import cv2
 import os
 import numpy as np
 
-#TODO rajouter un if pour filtrer les extensions fichiers
 
 def gray (dossierE , dossierS):
     files = os.listdir(dossierE)
 
     for f in files:
         img = cv2.imread(f"{dossierE}/{f}")
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        cv2.imwrite(f"{dossierS}/{f}", gray)
 
+        try:
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        except cv2.error as e:
+            print('image pas en jpg/png')
+
+        try:
+            cv2.imwrite(f"{dossierS}/{f}", gray)
+        except NameError as e:
+            print('varible pas crée')
+        except cv2.error as e:
+            print('')
 
 
 
@@ -32,7 +40,6 @@ def flou(dossierE, dossierS):
             print('varible pas crée')
         except cv2.error as e:
             print('')
-
 
 
 def latter(dossierE, dossierS):

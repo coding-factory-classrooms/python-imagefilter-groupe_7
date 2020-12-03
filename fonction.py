@@ -2,7 +2,6 @@ import cv2
 import os
 import numpy as np
 
-#TODO rajouter un if pour filtrer les extensions fichiers
 
 def gray (dossierE , dossierS):
     files = os.listdir(dossierE)
@@ -20,7 +19,6 @@ def gray (dossierE , dossierS):
             print('varible pas crée')
         except cv2.error as e:
             print('')
-
 
 
 
@@ -42,7 +40,6 @@ def flou(dossierE, dossierS):
             print('varible pas crée')
         except cv2.error as e:
             print('')
-
 
 
 def latter(dossierE, dossierS):

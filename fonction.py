@@ -1,6 +1,7 @@
 import cv2
 import os
 import numpy as np
+import logger
 
 
 def gray (dossierE , dossierS):
@@ -8,7 +9,6 @@ def gray (dossierE , dossierS):
 
     for f in files:
         img = cv2.imread(f"{dossierE}/{f}")
-
         try:
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         except cv2.error as e:
@@ -20,12 +20,14 @@ def gray (dossierE , dossierS):
             print('varible pas crée')
         except cv2.error as e:
             print('')
+        logger.log(f'gray = {f}')
 
 
 
 def flou(dossierE, dossierS, flouter):
     files = os.listdir(dossierE)
     for f in files:
+        print(f)
         img = cv2.imread(f"{dossierE}/{f}")
 
         try:
@@ -39,6 +41,7 @@ def flou(dossierE, dossierS, flouter):
             print('varible pas crée')
         except cv2.error as e:
             print('')
+        logger.log(f'flou = {f}')
 
 
 def latter(dossierE, dossierS, di):
@@ -59,3 +62,4 @@ def latter(dossierE, dossierS, di):
             print('varible pas crée')
         except cv2.error as e:
             print('')
+        logger.log(f'latter = {f}')

@@ -22,15 +22,14 @@ def gray (dossierE , dossierS):
 
 
 
-def flou(dossierE, dossierS):
+def flou(dossierE, dossierS, flouter):
     files = os.listdir(dossierE)
-
     for f in files:
         print(f)
         img = cv2.imread(f"{dossierE}/{f}")
 
         try:
-            flou = cv2.GaussianBlur(img, (5, 11), cv2.BORDER_DEFAULT)
+            flou = cv2.GaussianBlur(img, (flouter, flouter), cv2.BORDER_DEFAULT)
         except cv2.error as e:
             print('taille de flou pair ou image pas en jpg/png')
 
@@ -42,9 +41,9 @@ def flou(dossierE, dossierS):
             print('')
 
 
-def latter(dossierE, dossierS):
+def latter(dossierE, dossierS, di):
     files = os.listdir(dossierE)
-    kernel = np.ones((10, 10), np.uint(8))
+    kernel = np.ones((di, di), np.uint(8))
 
     for f in files:
         img = cv2.imread(f"{dossierE}/{f}")

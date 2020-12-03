@@ -2,6 +2,7 @@ from fonction import gray, flou, latter
 import sys
 
 try:
+
     dossier_entrance = "images"
     dossier_exit = "images2.0"
 

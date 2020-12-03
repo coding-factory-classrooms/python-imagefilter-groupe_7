@@ -2,10 +2,15 @@ from fonction import gray, flou, latter
 import sys
 
 try:
-    dossier_entrance = "images"
-    dossier_exit = "images2.0"
-
     args = sys.argv
+    dossier_entrance = "images"
+    #dossier_exit = "images2.0"
+    for t in range(0, len(args)):
+        arg = args[t]
+        if arg == '-i':
+            dossier_exit = f'{args[t+1]}'
+
+
     try:
         if args[1] == 'gray':
             gray(dossier_entrance,dossier_exit)

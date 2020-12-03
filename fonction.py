@@ -13,8 +13,6 @@ def gray (dossierE , dossierS):
         cv2.imwrite(f"{dossierS}/{f}", gray)
 
 
-
-
 def flou(dossierE, dossierS):
     files = os.listdir(dossierE)
 
@@ -32,7 +30,6 @@ def flou(dossierE, dossierS):
             print('varible pas crée')
         except cv2.error as e:
             print('')
-
 
 
 def latter(dossierE, dossierS):

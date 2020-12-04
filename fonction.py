@@ -17,7 +17,7 @@ def gray (dossierE , dossierS):
         try:
             cv2.imwrite(f"{dossierS}/{f}", gray)
         except NameError as e:
-            print('varible pas crée')
+            print('variable pas créee')
         except cv2.error as e:
             print('')
         logger.log(f'gray = {f}')
@@ -27,7 +27,6 @@ def gray (dossierE , dossierS):
 def flou(dossierE, dossierS, flouter):
     files = os.listdir(dossierE)
     for f in files:
-        print(f)
         img = cv2.imread(f"{dossierE}/{f}")
 
         try:
@@ -38,7 +37,7 @@ def flou(dossierE, dossierS, flouter):
         try:
             cv2.imwrite(f"{dossierS}/{f}", flou)
         except NameError as e:
-            print('varible pas crée')
+            print('varable pas crée')
         except cv2.error as e:
             print('')
         logger.log(f'flou = {f}')
@@ -59,7 +58,7 @@ def latter(dossierE, dossierS, di):
         try:
             cv2.imwrite(f"{dossierS}/{f}", latter)
         except NameError as e:
-            print('varible pas crée')
+            print('variable pas crée')
         except cv2.error as e:
             print('')
         logger.log(f'latter = {f}')

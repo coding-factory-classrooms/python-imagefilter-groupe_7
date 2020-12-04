@@ -53,7 +53,6 @@ try:
                     flou(dossier_exit, dossier_exit, floutage)
                 elif arg == '--latter':
                     latter(dossier_exit, dossier_exit, di)
-
         elif args[1] == '--flou':
             flou(dossier_entrance, dossier_exit, floutage)
             for i in range(2, len(args)):
@@ -72,11 +71,16 @@ try:
                 elif arg == '--gray':
                     gray(dossier_exit,dossier_exit)
     except IndexError as e:
+        print("")
         print('mettre une option de filtre')
 except FileNotFoundError as e:
+    print("")
     print('dossier inexistant')
 except IndexError as e :
-    print(eg)
+    print(e)
+except ValueError as e:
+    print("")
+    print("tu n'as pas mit de valeur")
 
 logger.dump_log()
 

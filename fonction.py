@@ -5,6 +5,11 @@ import logger
 
 
 def gray (dossierE , dossierS):
+    """
+    permet de modifier les images dans un dossier et les mettre en noir et blanc
+    :param dossierE: dossier ou se trouve les images avant la modif
+    :param dossierS: dossier ou  les images vont etre mise apres la modif
+    """
     global gray
     files = os.listdir(dossierE)
 
@@ -27,6 +32,13 @@ def gray (dossierE , dossierS):
 
 
 def flou(dossierE, dossierS, flouter):
+    """
+    permet de modifier les images dans un dossier et les flouter
+    :param dossierE: dossier ou se trouve les images avant la modif
+    :param dossierS: dossier ou  les images vont etre mise apres la modif
+    :param flouter: niveau de floutage
+    """
+
     if flouter <= 0 or flouter % 2 ==0 :
         print('flou level invalide')
     else:
@@ -51,6 +63,12 @@ def flou(dossierE, dossierS, flouter):
 
 
 def latter(dossierE, dossierS, di):
+    """
+    permet de modifier les images dans un dossier et les dilatter
+    :param dossierE: dossier ou se trouve les images avant la modif
+    :param dossierS: dossier ou  les images vont etre mise apres la modif
+    :param di: niveau de dilatation
+    """
     global latter
     files = os.listdir(dossierE)
     kernel = np.ones((di, di), np.uint(8))

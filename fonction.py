@@ -5,6 +5,7 @@ import logger
 
 
 def gray (dossierE , dossierS):
+    global gray
     files = os.listdir(dossierE)
 
     for f in files:
@@ -25,6 +26,7 @@ def gray (dossierE , dossierS):
 
 
 def flou(dossierE, dossierS, flouter):
+    global flou
     files = os.listdir(dossierE)
     for f in files:
         img = cv2.imread(f"{dossierE}/{f}")
@@ -44,6 +46,7 @@ def flou(dossierE, dossierS, flouter):
 
 
 def latter(dossierE, dossierS, di):
+    global latter
     files = os.listdir(dossierE)
     kernel = np.ones((di, di), np.uint(8))
 
